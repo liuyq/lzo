@@ -1,0 +1,11 @@
+LOCAL_PATH := $(call my-dir)
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := liblzo
+PROJECT_DIR := lzo-src
+
+LOCAL_EXPORT_C_INCLUDES += $(PROJECT_DIR)/include
+LOCAL_C_INCLUDES += $(LOCAL_EXPORT_C_INCLUDES)
+LOCAL_SRC_FILES += $(wildcard $(PROJECT_DIR)/src/*.c)
+
+include $(BUILD_STATIC_LIBRARY)
